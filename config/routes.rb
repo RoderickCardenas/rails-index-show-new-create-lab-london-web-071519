@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'coupons/show'
+
+  get 'coupons/index'
+
+  get 'coupons/new'
+
+  get 'coupons/create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +61,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  #index
+  get '/coupons', to: 'coupons#index', as: 'coupons'
+  #new
+  get '/coupons/new', to: 'coupons#new', as: 'new_coupon'
+  #show
+  get '/coupons/:id', to: 'coupons#show', as: 'coupon'
+  #create
+  post '/coupons', to: 'coupons#create'
 end
